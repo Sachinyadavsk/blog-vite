@@ -1,31 +1,24 @@
 import { Routes, Route, Link } from 'react-router-dom'
-
-
-function Home() {
-return <h1>Home</h1>
-}
-function About() {
-return <h1>About</h1>
-}
-function NotFound() {
-return <h1>404 — Not Found</h1>
-}
+import Homes from './Home/Homes'
+import About from './componets/About'
+import NotFound from './componets/NotFound'
+import Navbar from './componets/Navbar'
+import Reactjs from './course/Reactjs'
+import ReactNative from './course/ReactNative'
+import Contact from './componets/Contact'
 
 
 export default function App() {
-return (
-<div style={{ padding: 24 }}>
-<nav style={{ display: 'flex', gap: 12 }}>
-<Link to="/">Home</Link>
-<Link to="/about">About</Link>
-</nav>
-
-
-<Routes>
-<Route path="/" element={<Home />} />
-<Route path="/about" element={<About />} />
-<Route path="*" element={<NotFound />} />
-</Routes>
-</div>
-)
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<Homes />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/react-js" element={<Reactjs />} />
+                <Route path="/react-native" element={<ReactNative />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </>
+    )
 }
